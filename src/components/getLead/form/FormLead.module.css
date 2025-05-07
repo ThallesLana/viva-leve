@@ -1,0 +1,89 @@
+.formDiv {
+    border-radius: 10px;
+    border: 1px solid var(--malachite);
+    padding: 1rem;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    padding: 0.5rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    & label {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    & input, textarea {
+        padding: 0.5rem;
+    }
+}
+
+@supports (width: -moz-available) {
+    .field input, textarea {
+        width: -moz-available;
+    }
+}
+
+@supports (width: -webkit-fill-available) {
+    .field input, textarea {
+        width: -webkit-fill-available;
+    }
+}
+
+.fieldName {
+    width: 75%;
+}
+
+.fieldAge {
+    width: 20%;
+}
+
+.fieldEmail {
+    width: 55%;
+}
+
+.fieldPhone {
+    width: 40%;
+}
+
+.fieldTextArea {
+    width: 100%;
+}
+
+@media (max-width: 512px) {
+    .row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .fieldName {
+        width: 100%;
+    }
+
+    .fieldAge {
+        width: 100%;
+    }
+
+    .fieldEmail {
+        width: 100%;
+    }
+
+    .fieldPhone {
+        width: 100%;
+    }
+    .fieldTextArea {
+        width: 100%;
+    }
+}

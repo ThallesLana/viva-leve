@@ -1,0 +1,65 @@
+.mainContent {
+    display: flex;
+}
+
+.aside {
+    max-width: 40%;
+    padding: 2rem;
+
+    & h2 {
+        text-align: start;
+        font-family: var(--inter-font);
+        color: var(--white);
+        font-weight: bold;
+        font-size: 32px;
+    }
+
+    & p {
+        text-align: start;
+        font-family: var(--ledger-font);
+        color: var(--white);
+        font-weight: 400;
+        font-size: 24px;
+    }
+}
+
+.imageBackground {
+    width: 60%;
+    max-height: 400px;
+    img {
+        width: 80%;
+        height: 100%;
+        object-fit: cover;
+        float: right;
+    }
+}
+
+@media (max-width: 900px) {
+    .mainContent {
+        display: block;
+    }
+
+    .aside {
+        max-width: 100%;
+        background-image: url('/impactTitleMobile.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-blend-mode: overlay;
+
+        & h2 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        & p {
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+
+    .imageBackground {
+        display: none;
+    }
+}

@@ -1,0 +1,92 @@
+.footerContent {
+    height: 50px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin: 1rem;
+}
+
+.terms {
+    text-align: left;
+
+    & p {
+        margin: 0;
+        font-size: 12px;
+        cursor: pointer;
+    
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.copyright {
+    margin: 1rem;
+}
+
+.modal {
+    position: absolute;
+    inset: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 16px;
+    outline: none;
+    padding: 20px;
+    color: var(--black);
+
+    & h2 {
+        margin: 0;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    & hr {
+        border: 1px solid var(--black) !important;
+    }
+
+    & button {
+        float: none;
+    }
+}
+
+.buttonModal {
+    text-align: center;
+}
+
+.modalContent {
+    text-align: justify;
+    font-family: var(--ledger-font);
+    padding: 10px;
+}
+
+@media (max-width: 900px) {
+    .footerContent {
+        height: 120px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .terms {
+        text-align: center;
+    }
+    
+    .copyright {
+        margin: 0;
+        padding-top: 5px;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .modal {
+        inset: 16px;
+    }
+}

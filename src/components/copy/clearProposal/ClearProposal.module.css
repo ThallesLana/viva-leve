@@ -1,0 +1,33 @@
+.clearProposal {
+    padding: 1rem 2rem;
+
+    & h1 {
+        text-align: center;
+        font-family: var(--inter-font);
+        color: var(--white);
+        font-weight: bold;
+        font-size: 32px;
+    }
+
+    & h3 {
+        text-align: center;
+        font-family: var(--inter-font);
+        color: var(--white);
+        font-weight: 300;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    .clearProposal {
+        & h1 {
+            font-size: 24px;
+            text-align: center;
+        }
+    
+        & h3 {
+            font-size: 20px;
+            text-align: center;
+        }
+    }    
+}
