@@ -1,6 +1,6 @@
 import styles from './ClearProposal.module.css';  
 
-const impactTitle = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+const impactTitle = 'Recupere sua Mobilidade e Diga Adeus à Dor!';
 
 function ClearProposal() {
   return (
@@ -8,7 +8,10 @@ function ClearProposal() {
       <main className={styles.clearProposal}>
         <h1>{impactTitle}</h1>
         <hr />
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+        <h3>
+          Volte a viver <strong>sem limitações</strong>! 
+          Recupere sua <strong>qualidade de vida.</strong>
+        </h3>
       </main>
     </div>
   );

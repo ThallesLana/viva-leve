@@ -39,7 +39,7 @@ body {
 }
 
 .content {
-  background-color: var(--pine);
+  background-color: var(--oxford);
   width: 100vw;
   height: auto;
 }
@@ -106,6 +106,10 @@ button:focus-visible {
 hr {
   border: 2px solid var(--malachite) !important;
   opacity: 1 !important;
+}
+
+strong {
+  font-weight: bold;
 }
 
 @media (prefers-color-scheme: light) {

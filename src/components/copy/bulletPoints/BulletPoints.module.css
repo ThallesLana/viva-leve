@@ -10,11 +10,16 @@
     }
 }
 
+.bulletPointsContent {
+    display: flex;
+    justify-content: center;
+}
+
 .bulletPointsList {
     list-style-type: disc;
     padding: 0;
     margin: 0;
-    text-align: center;
+    text-align: left;
 
     & li {
         font-family: var(--inter-font);
@@ -32,7 +37,10 @@
         text-align: center;
     }
 
-    .bulletPointsList li {
-        font-size: 18px;
+    .bulletPointsList {
+        text-align: center;
+        & li{
+            font-size: 18px;
+        }
     }   
 }
