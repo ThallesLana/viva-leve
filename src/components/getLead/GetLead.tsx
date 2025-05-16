@@ -28,7 +28,7 @@ function GetLead() {
 
                 <aside id="formLead" className={styles.right}>
                     <FormLead />
-                    <p>Nós respeitamos sua privacidade e não enviaremos spam.</p>
+                    <p>Nós respeitamos sua privacidade e nos comprometemos a não te direcionar spam.</p>
                 </aside>
             </section>
 
