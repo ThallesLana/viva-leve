@@ -1,6 +1,6 @@
 :root {
   @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ledger&display=swap');
-  
+
   --black: #242424;
   --charcoal: #36454F;
   --azure: #d9e8e5;
@@ -112,6 +112,17 @@ strong {
   font-weight: bold;
 }
 
+.termTopic {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: underline;
+    font-family: var(--inter-font);
+}
+
+.termContent {
+  font-family: var(--inter-font);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -128,5 +139,10 @@ strong {
 @media (max-width: 900px) {
   button {
     float: none;
+  }
+
+  .termTopic {
+    text-align: center;
+    font-size: 1.2rem;
   }
 }

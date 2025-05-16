@@ -5,7 +5,7 @@ import TermsOfUse from '../terms/termsOfUse/TermosOfUse';
 import TermsOfPrivacy from '../terms/termsOfPrivacy/TermsOfPrivacy';
 
 
-const enterprise: string = 'Viva Leve';
+const enterprise: string = 'TM Leads';
 
 Modal.setAppElement('#root');
 
@@ -22,7 +22,7 @@ function Footer() {
             title = 'Termo de Uso';
             content = <TermsOfUse />;
         } else if (type === 'termsOfPrivacy') {
-            title = 'Termo de Privacidade';
+            title = 'Política de Privacidade';
             content = <TermsOfPrivacy />;
         }
 
@@ -39,13 +39,13 @@ function Footer() {
             <section className={styles.footer}>
                 <div className={styles.terms}>
                     <p onClick={() => openModal('termsOfUse')}>Termo de Uso</p>
-                    <p onClick={() => openModal('termsOfPrivacy')}>Termo de Privacidade</p>
+                    <p onClick={() => openModal('termsOfPrivacy')}>Política de Privacidade</p>
                 </div>
                 <p className={styles.copyright}>
                     © 2025 {enterprise}. Todos os direitos reservados.
                 </p>
             </section>
-        
+
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
@@ -58,7 +58,7 @@ function Footer() {
                 </div>
                 <hr />
                 <div className={styles.buttonModal}>
-                    <button onClick={closeModal}>Close Modal</button>
+                    <button onClick={closeModal}>Fechar o modal</button>
                 </div>
             </Modal>
         </div>

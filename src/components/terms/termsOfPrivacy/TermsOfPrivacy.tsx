@@ -1,18 +1,66 @@
 function TermsOfPrivacy() {
     return (
         <>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet velit tincidunt, semper metus in, tincidunt velit. Donec vulputate sapien vel orci viverra, eget rhoncus justo fermentum. Quisque tempor urna nec massa convallis, vel luctus nisl facilisis. In nec vehicula nisi, ac facilisis diam. Aliquam erat volutpat. Curabitur ut enim sit amet magna tincidunt vehicula. Suspendisse scelerisque libero eget neque blandit, non malesuada sapien congue. Pellentesque sed metus nisi. Aenean lobortis diam vel ex facilisis, sed mattis nunc tincidunt.
+            <h3 className={'termTopic'}>
+                Do Acesso dos Usuários
+            </h3>
+            <p className={'termContent'}>
+                Serão utilizadas todas as soluções técnicas à disposição do responsável pela plataforma para
+                permitir o acesso ao serviço 24 horas por dia, 7 dias por semana. No entanto, a navegação na
+                plataforma ou em alguma de suas páginas poderá ser interrompida, limitada ou suspensa para
+                atualizações, modificações ou qualquer ação necessária ao seu bom funcionamento.
+            </p>
 
-                Mauris fermentum augue nec nisl ultricies, in iaculis quam dictum. Ut porttitor neque non diam blandit, sit amet hendrerit sapien convallis. Curabitur feugiat magna ut finibus dapibus. In ut dolor non magna vehicula pretium. Nullam fringilla magna nec diam congue tincidunt. Sed tristique nisl at nisl suscipit finibus. Nullam sed blandit mauris. Suspendisse potenti. Nulla rutrum gravida dui, sed faucibus magna luctus vitae. Morbi scelerisque sem sit amet justo tincidunt, in tincidunt ante mattis.
+            <h3 className={'termTopic'}>
+                Das Responsabilidades Dos Formulários De Captação de Leads
+            </h3>
+            <p className={'termContent'}>
+                O site será desenvolvido com formulários de captação de leads focados na qualificação rápida e
+                eficaz. Para garantir que o processo de preenchimento seja simples e direto, as diretrizes são as
+                seguintes: Campos Essenciais: Os formulários coletarão apenas as informações essenciais para
+                qualificar o lead, como nome, e-mail e, opcionalmente, um campo de interesse (ex.: "Qual é o
+                seu principal objetivo de saúde?"). Isenção de Spam: O site destacará de forma clara e
+                transparente que não serão enviados e-mails não solicitados. Uma mensagem como: “Nós
+                respeitamos sua privacidade e não enviaremos spam” será exibida ao lado do formulário para
+                tranquilizar os visitantes. Call to Action (CTA) Atraente: O visitante será incentivado a preencher
+                o formulário com uma chamada de ação clara e atraente, como: "Receba dicas de saúde
+                personalizadas!" ou "Agende sua consulta gratuita e melhore sua saúde agora!".
+            </p>
 
-                Vestibulum ac bibendum nunc. Proin sed arcu lorem. Donec consequat dolor non mauris tristique, nec lobortis augue malesuada. Nam vitae finibus eros. Morbi scelerisque, leo eget eleifend placerat, ligula leo lacinia nisl, in pretium nulla nunc nec nisl. Etiam fringilla nisl a mi tincidunt, sit amet dapibus augue volutpat. Suspendisse vitae mi non leo sagittis scelerisque. Sed pulvinar odio in tellus vehicula porttitor. Mauris sit amet dolor in nisi porttitor convallis.
-
-                Nullam nec tortor sed lacus sodales vestibulum. Aliquam non mauris ac lorem convallis pharetra. Nullam non erat eget magna scelerisque posuere. Vestibulum at sagittis enim. Sed vel facilisis lacus, vitae dapibus purus. In sed ligula euismod, hendrerit diam nec, vehicula orci. Morbi volutpat eu purus non imperdiet. Integer eget tellus eu mi ullamcorper ultricies. Duis hendrerit elit ac sapien faucibus gravida. Sed pretium sem a lorem euismod, vitae hendrerit eros porta. Nullam eu erat tempor, lacinia libero a, faucibus leo.
-
-                Pellentesque bibendum metus vel elit faucibus, in fermentum justo sodales. Nam a suscipit nunc, vitae sodales eros. Vivamus in malesuada lorem. Vivamus sed ex magna. Pellentesque eget rhoncus elit. Cras ut faucibus ligula. Cras in dapibus est. Phasellus sit amet semper nulla. Nunc sit amet justo a justo volutpat eleifend a ut arcu. In hac habitasse platea dictumst. Proin congue ligula sed nunc pretium tristique. Duis posuere nulla id sapien feugiat, vel gravida est pretium. Aenean a eros tempor, viverra libero nec, gravida nisl. Phasellus vulputate justo id pretium laoreet.
-
-                Sed ac lacus ac sapien efficitur tincidunt. Curabitur semper euismod odio, a blandit ligula tincidunt in. Maecenas blandit nunc eget libero fermentum, et rutrum magna efficitur. In vel faucibus sem, id placerat erat. Aenean dapibus metus sed nulla commodo, in rhoncus arcu rutrum. Nullam vestibulum orci id pulvinar vehicula. Integer sed turpis turpis. Vivamus luctus tempor sem nec porttitor. Integer tincidunt massa in luctus faucibus. Duis laoreet est nec massa lobortis, nec vehicula orci rhoncus. Etiam malesuada ac ex nec gravida. Sed viverra dui quis gravida egestas.
+            <h3 className={'termTopic'}>
+                Do Cadastro
+            </h3>
+            <p className={'termContent'}>
+                O acesso às funcionalidades da plataforma exigirá a realização de um cadastro prévio e, a
+                depender dos serviços ou produtos escolhidos, o pagamento de determinado valor. Ao se
+                cadastrar, o usuário deverá informar dados completos, recentes e válidos, sendo de sua
+                exclusiva responsabilidade manter referidos dados atualizados, bem como se compromete com
+                a veracidade dos dados fornecidos. O usuário se compromete a não informar seus dados
+                cadastrais e/ou de acesso à plataforma a terceiros, responsabilizando-se integralmente pelo uso
+                que deles seja feito. Menores de 18 anos e aqueles que não possuírem plena capacidade civil
+                deverão obter previamente o consentimento expresso de seus responsáveis legais para
+                utilização da plataforma e dos serviços ou produtos, sendo de responsabilidade exclusiva dos
+                mesmos o eventual acesso por menores de idade e por aqueles que não possuem plena
+                capacidade civil sem a prévia autorização. Mediante a realização do cadastro, o usuário declara
+                e garante expressamente ser plenamente capaz, podendo exercer e usufruir livremente dos
+                serviços e produtos. O usuário deverá fornecer um endereço de e-mail válido, através do qual o
+                site realizará todas as comunicações necessárias. Após a confirmação do cadastro, o usuário
+                possuirá um login e uma senha pessoal, que assegura ao usuário o acesso individual à
+                plataforma. Compete ao usuário exclusivamente a manutenção de referida senha de maneira
+                confidencial e segura, evitando o acesso indevido às informações pessoais. Toda e qualquer
+                atividade realizada com o uso da senha será de responsabilidade do usuário, que deverá
+                informar prontamente a plataforma em caso de uso indevido da respectiva senha. Não será
+                permitido ceder, vender, alugar ou transferir, de qualquer forma, a conta, que é pessoal e
+                intransferível. Caberá ao usuário assegurar que o seu equipamento seja compatível com as
+                características técnicas que viabilizem a utilização da plataforma e dos serviços ou produtos. O
+                usuário poderá, a qualquer tempo, requerer o cancelamento de seu cadastro junto ao site ou
+                aplicativo. O seu descadastramento será realizado o mais rapidamente possível, desde que não
+                sejam verificados débitos em aberto. O usuário, ao aceitar os Termos e a Política de Privacidade,
+                autoriza expressamente a plataforma a coletar, usar, armazenar, tratar, ceder ou utilizar as
+                informações derivadas do uso dos serviços, do site e quaisquer plataformas, incluindo todas as
+                informações preenchidas pelo usuário no momento em que realizar ou atualizar seu cadastro,
+                além de outras expressamente descritas na Política de Privacidade que deverá ser autorizada
+                pelo usuário.
             </p>
         </>
     );
