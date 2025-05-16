@@ -38,7 +38,6 @@ function Footer() {
         <div className={`${styles.footerContent} content`}>
             <section className={styles.footer}>
                 <div className={styles.terms}>
-                    <p onClick={() => openModal('termsOfUse')}>Termo de Uso</p>
                     <p onClick={() => openModal('termsOfPrivacy')}>Política de Privacidade</p>
                 </div>
                 <p className={styles.copyright}>
