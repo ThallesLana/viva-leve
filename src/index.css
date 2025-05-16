@@ -15,6 +15,8 @@
   --pine: #007167;
   --error: #C80D11;
   --warning: #FFA500;
+  --a-color: #646CFF;
+  --a-color-hover: #535BF2;
 
   --inter-font: 'Inter', sans-serif;
   --ledger-font: 'Ledger', serif;
@@ -60,8 +62,12 @@ body {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--a-color);
   text-decoration: inherit;
+
+  &:hover {
+    color: var(--a-color-hover);
+  }
 }
 a:hover {
   color: #535bf2;
@@ -90,17 +96,18 @@ button {
   cursor: pointer;
   background-color: var(--malachite);
   float: left;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s ease-in-out;
-}
 
-button:hover {
-  transform: scale(1.1);
-}
+  &:hover {
+    transform: scale(1.1);
+  }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  &:disabled {
+    transform: none;
+    background-color: var(--myrtle);
+    cursor: not-allowed;
+  }
 }
 
 hr {
@@ -121,19 +128,6 @@ strong {
 
 .termContent {
   font-family: var(--inter-font);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 @media (max-width: 900px) {

@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
-import { sendLeadData } from '../../../utils/sendLeadData';
+import {useEffect, useRef, useState} from 'react';
+import {sendLeadData} from '../../../utils/sendLeadData';
 import styles from './FormLead.module.css';
-import { BeatLoader } from 'react-spinners';
-import { toast } from 'react-toastify';
-import { PatternFormat } from 'react-number-format';
+import {BeatLoader} from 'react-spinners';
+import {toast} from 'react-toastify';
+import {PatternFormat} from 'react-number-format';
 
 const textAreaLabel: string = 'Qual seu objetivo?';
 const textAreaPlacehold: string = 'Insira qual seu objetivo...';
@@ -16,6 +16,7 @@ function FormLead() {
     const [isLoading, setIsLoading] = useState(false);
     const [validationError, setValidationError] = useState('');
     const recaptchaScriptLoaded = useRef(false);
+    const [isConsentChecked, setIsConsentChecked] = useState(false);
 
     useEffect(() => {
         if(!recaptchaScriptLoaded.current) {
@@ -48,12 +49,10 @@ function FormLead() {
         }
 
         try {
-            const token = await window.grecaptcha.execute(
-                import.meta.env.VITE_RECAPTCHA_SITE_KEY, 
-                { action }
+            return await window.grecaptcha.execute(
+                import.meta.env.VITE_RECAPTCHA_SITE_KEY,
+                {action}
             );
-
-            return token;
         } catch (err) {
             console.error('Error executing reCAPTCHA:', err);
             return null;
@@ -63,18 +62,30 @@ function FormLead() {
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setValidationError('');
-        
+
         const form = event.currentTarget as HTMLFormElement;
 
         const formData = new FormData(form);
-        
+
+        const age = formData.get('age') as string;
         const email = formData.get('email') as string;
         const phone = formData.get('phone') as string;
-        
+        const consent = formData.get('consent') !== null;
+
+        if(age && (parseInt(age) < 18 || parseInt(age) > 95)) {
+            toast.error('Idade inválida. Por favor, insira uma idade entre 18 e 95 anos.');
+            return;
+        }
+
         if ((!email || email.trim() === '') && (!phone || phone.trim() === '')) {
             setValidationError('Por favor, forneça pelo menos um e-mail ou telefone para contato.');
             return;
-        }        
+        }
+
+        if (!consent) {
+            toast.error('Você deve concordar com a Política de Privacidade.');
+            return;
+        }
 
         try {
             setIsLoading(true);
@@ -94,17 +105,33 @@ function FormLead() {
                 email: email,
                 phone: phone,
                 reason: formData.get('reason') as string,
-                recaptchaToken: token
+                recaptchaToken: token,
+                consent: true,
+                consentDate: new Date().toLocaleString('pt-BR', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                }),
             };
 
             const result = await sendLeadData(data);
 
             setIsLoading(false);
-            
-            if(result.status === 200) {
-                toast.success('Formulário enviado com sucesso!');
 
+            const status: number = result.data.status;
+
+            if(status === 200) {
+                toast.success('Formulário enviado com sucesso!');
                 setIsSubmitted(true);
+                form.reset();
+            }
+
+            if(status === 401) {
+                toast.error('Validação do recaptcha falhou. Tente novamente mais tarde.');
+                setIsConsentChecked(false);
                 form.reset();
             }
 
@@ -137,7 +164,7 @@ function FormLead() {
                     </div>
                     <div className={`${styles.field} ${styles.fieldAge}`}>
                         <label htmlFor="age">Idade</label>
-                        <input type="text" id="age" name="age" placeholder='Insira sua idade...' required />
+                        <input type="number" min="18" id="age" name="age" placeholder='Insira sua idade...' required />
                     </div>
                 </div>
                 <div className={styles.row}>
@@ -173,12 +200,22 @@ function FormLead() {
                 </div>
 
                 <div className={styles.row}>
-                    <button type="submit" disabled={isLoading}>Enviar</button>
+                    <div className={styles.fieldCheckbox}>
+                        <input type="checkbox" id="consent" name="consent"  onChange={(e) => setIsConsentChecked(e.target.checked)}/>
+                        &nbsp;
+                        <label htmlFor="consent">
+                            Li e concordo com a Política de Privacidade.
+                        </label>
+                    </div>
+                </div>
+
+                <div className={styles.row}>
+                    <button type="submit" disabled={isLoading || !isConsentChecked}>Enviar</button>
                 </div>
             </form>
             ) : (
                 <div className={styles.successMessage}>
-                    
+
                     <h2>Obrigado por se inscrever!</h2>
                     <p>Entraremos em contato em breve.</p>
                 </div>

@@ -62,6 +62,14 @@ form {
     width: 100%;
 }
 
+.fieldCheckbox {
+    text-align: left;
+}
+
+.terms {
+    cursor: pointer;
+}
+
 @media (max-width: 512px) {
     .row {
         flex-direction: column;
