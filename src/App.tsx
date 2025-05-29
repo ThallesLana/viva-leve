@@ -8,16 +8,43 @@ import ImpactTitle from './components/impactTitle/ImpactTitle'
 import { useEffect, useState } from 'react'
 
 function InstagramBlocker() {
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href)
+      alert('Link copiado para a área de transferência!')
+    } catch (err) {
+      alert('Não foi possível copiar o link.')
+      console.error('Erro ao copiar o link:', err)
+    }
+  }
+
   return (
-    <div style={{ padding: 20, fontFamily: 'sans-serif', textAlign: 'center' }}>
+    <div style={{ padding: 20, textAlign: 'center' }}>
       <h2>Abra no navegador para continuar</h2>
-      <p>O Instagram bloqueia recursos de segurança nesta página.</p>
+      <p>
+        O Instagram bloqueia recursos de segurança nesta página.<br />
+        Para continuar, clique nos <b>três pontinhos</b> no canto superior direito e escolha <b>“Abrir no navegador”</b>.<br /><br />
+        Ou, se preferir, copie o link abaixo e cole no seu navegador:
+      </p>
+      <input
+        type="text"
+        value={window.location.href}
+        readOnly
+        style={{ width: '90%', marginBottom: 10, padding: 5, fontSize: 14 }}
+        onFocus={e => e.target.select()}
+      />
+      <br />
       <button
-        onClick={() => window.location.href = 'https://www.seusite.com'}
-        style={{ padding: '10px 20px', fontSize: 16 }}
+        onClick={handleCopy}
+        style={{ padding: '10px 20px', fontSize: 16, marginBottom: 20 }}
       >
-        Abrir no navegador
+        Copiar link
       </button>
+      <img
+        src="https://i.imgur.com/2yaf2wb.png"
+        alt="Instrução abrir no navegador"
+        style={{ maxWidth: 200, margin: '20px auto', display: 'block' }}
+      />
     </div>
   )
 }
