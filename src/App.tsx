@@ -25,7 +25,7 @@ function InstagramBlocker() {
         O Instagram bloqueia recursos de segurança nesta página.
         <br />
         Para continuar, clique nos <b>três pontinhos</b> no canto superior direito e escolha <b>“Abrir no navegador”</b>.<br /><br />
-        Ou, se preferir, copie o link clicando no botão abaixo e cole no seu navegador:
+        Ou, se preferir, copie o link clicando no botão abaixo e cole no seu navegador de preferência.
       </p>
       <br />
       <button
